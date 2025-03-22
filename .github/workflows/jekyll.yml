@@ -12,7 +12,7 @@ on:
     branches: ["master"]
 
   # Allows you to run this workflow manually from the Actions tab
-  # workflow_dispatch:
+  workflow_dispatch:
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -40,6 +40,8 @@ jobs:
           ruby-version: '3.1' # Not needed with a .ruby-version file
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Install dependencies
+        run: sudo apt-get install -y libvips
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
@@ -63,7 +65,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        
 # Welcome to Jekyll!
 #
 # This config file is meant for settings that affect your whole blog, values
@@ -85,3 +86,25 @@ jobs:
 # and they will be accessible in the templates via {{ site.env.MYVARIABLE }}.
 #
 # Build settings
+
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+exclude: [Dockerfile, LICENSE, docker-compose.yml, README.md, Procfile]
