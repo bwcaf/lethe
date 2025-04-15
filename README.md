@@ -1,5 +1,3 @@
-![Photo Stream Social Preview](https://raw.githubusercontent.com/waschinski/photo-stream/master/social-preview.png)
-
 # Photo Stream
 
 Photo Stream is a simpler home for your photos initially created by [@maxvoltar](https://github.com/maxvoltar) and now maintained by [@waschinski](https://github.com/waschinski), [@boerniee](https://github.com/boerniee) and [friends](https://github.com/waschinski/photo-stream/graphs/contributors). Easy to use, self hosted, no tracking, just photos.
